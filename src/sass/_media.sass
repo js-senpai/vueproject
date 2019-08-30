@@ -15,15 +15,20 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-
-   /**/
+   h1
+     @include selectFont('Overpass',600,50px,60px)
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-   /**/
-
-
+  h1
+    @include selectFont('Overpass',600,30px,36px)
+  h2
+    @include selectFont('Overpass',600,26px,31px)
+  h3
+    @include selectFont('Overpass',600,22px,26px)
+  h5
+    @include selectFont('Sounce Sans Pro',400,16px,20px)
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
    /**/

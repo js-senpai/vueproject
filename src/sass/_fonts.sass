@@ -8,7 +8,7 @@
 // 700 Bold;
 // 800 Black or Extra Bold or Heavy;
 // 900 Extra Black or Fat or Ultra Black
-
+@import url('https://fonts.googleapis.com/css?family=Overpass:600|Source+Sans+Pro:400,700&display=swap')
 
 @mixin font($f-name, $f-style, $f-weight, $f-url)
 	@font-face
@@ -16,5 +16,9 @@
 		font-style: $f-style
 		font-weight: $f-weight
 		src: url($f-url) format('woff2')
-
+@mixin selectFont($font-family,$font-style,$font-size,$line-height)
+	    font-family: $font-family, sans-serif
+	    font-weight: $font-style
+	    font-size: $font-size
+	    line-height: $line-height
 
