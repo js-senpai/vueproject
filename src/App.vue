@@ -1,6 +1,7 @@
 <template>
   <div id="app">
      <header-template></header-template>
+     <banner></banner>
   </div>
 </template>
 <style lang="sass">
@@ -8,6 +9,7 @@
 </style>
 <script>
 import Header from './components/Header'
+import Banner from './components/Banner'
 export default{
   name: 'app',
   data(){
@@ -16,7 +18,8 @@ export default{
     }
   },
   components:{
-    'header-template':Header
+    'header-template':Header,
+    'banner': Banner
   }
 }
 </script>

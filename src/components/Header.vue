@@ -45,6 +45,7 @@
             }
         },
         created() {
+           // Получаем текущего пользователя
            axios({
                methods: 'get',
                url: 'https://frontend-test-assignment-api.abz.agency/api/v1/users/1'

@@ -17,19 +17,21 @@ input, textarea
 *
 	margin: 0
 	padding: 0
+a,button
+	cursor: pointer
 a
 	text-decoration: none
 	color: #000
 a:hover
 	color: $primary-color
-body
+body,#app
 	min-width: 320px
 	max-width: 2560px
 	position: relative
-	overflow-x: hidden
+	overflow: hidden
 	color: #000
 	background-color: $white
-	word-wrap: break-word
+	padding-top: 1px
 	@include selectFont('Source Sans Pro',400,16px,1.65)
 // Headers text configs
 h1
@@ -56,21 +58,26 @@ img
 	justify-content: space-between
 // header
 .nav-menu
-	padding: 20px 0
-.logo,.menu,.login-container
+	margin: 10px 0
 	height: 40px
 .logo
 	width: 134px
+	img
+		height: 100%
 .menu
-	@include  list-type-none
+	@include list-type-none
+	@include control-text
+	line-height: 40px
 	.menu-item
 	  margin: 0 10px
 	.active
 	  color: #0a0af7
 .login-contact
 	margin-right: 10px
+	max-width: 136px
 	.login-name,.login-email
 	  display: block
+	  @include control-text
 	.login-name
 	  font-size: 14px
 	  text-align: right
@@ -86,7 +93,36 @@ img
 	display: block
 	width: 24px
 	height: 20px
-	background: url('./assets/icons/sign-out.svg') no-repeat
+	background: url('./assets/icons/sign-out.svg') no-repeat #fff
 	background-size: cover
 	margin: 10px 0 0 15px
+// Banner
+.banner
+	width: 100%
+	height: 680px
+	background: url('./assets/imgs/bg-1.jpg') no-repeat #283593
+	background-size: cover
+	background-position: center
+	padding-top: 1px
+.banner-title
+	margin: 140px 0 35px 0
+	color: $white
+	max-width: 455px
+	font-size: 50px
+	@include  control-text
+.banner-text
+	color: $white
+	font-size: 20px
+	max-width: 540px
+	margin-bottom: 35px
+.banner-sign-in
+	display: block
+	width: 293px
+	padding: 11px 0
+	background-color: $primary-color
+	@include reset-button
+	font-size: 20px
+	color: #fff
+	border-radius: 5px
+	font-weight: bold
 @import "media.sass"
