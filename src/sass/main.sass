@@ -28,27 +28,31 @@ body,#app
 	min-width: 320px
 	max-width: 2560px
 	position: relative
-	overflow: hidden
+	overflow-x: hidden
 	color: #000
 	background-color: $white
-	padding-top: 1px
 	@include selectFont('Source Sans Pro',400,16px,1.65)
 // Headers text configs
 h1
 	@include selectFont('Overpass',600,50px,60px)
 h2
 	@include selectFont('Overpass',600,42px,51px)
+	margin-bottom: 60px
 h3
-	@include selectFont('Overpass',600,42px,51px)
+	@include selectFont('Overpass',600,26px,51px)
 h4
-	@include selectFont('Overpass',600,26px,31px)
+	@include selectFont('Overpass',600,22px,31px)
 h5
 	@include selectFont('Source Sans Pro',400,18px,21px)
 // Paragraph configs
 p
 	@include selectFont('Source Sans Pro',400,18px,26px)
+	margin-bottom: 30px
 img
 	max-width: 100%
+// margin sections
+.banner,.about,.requirements
+	@include section-margin
 // containers
 .container
 	max-width: 1170px
@@ -58,8 +62,13 @@ img
 	justify-content: space-between
 // header
 .nav-menu
-	margin: 10px 0
+	padding: 10px 0
 	height: 40px
+	width: 100%
+	background-color: $white
+.nav-menu.active
+	position: fixed
+	z-index: 1000
 .logo
 	width: 134px
 	img
@@ -99,10 +108,6 @@ img
 // Banner
 .banner
 	width: 100%
-	height: 680px
-	background: url('./assets/imgs/bg-1.jpg') no-repeat #283593
-	background-size: cover
-	background-position: center
 	padding-top: 1px
 .banner-title
 	margin: 140px 0 35px 0
@@ -112,17 +117,52 @@ img
 	@include  control-text
 .banner-text
 	color: $white
-	font-size: 20px
 	max-width: 540px
 	margin-bottom: 35px
-.banner-sign-in
+.banner-sign-up
 	display: block
 	width: 293px
 	padding: 11px 0
 	background-color: $primary-color
-	@include reset-button
+	text-align: center
 	font-size: 20px
 	color: #fff
 	border-radius: 5px
 	font-weight: bold
+// About
+.about-top
+	margin-bottom: 80px
+.about-img
+	margin-top: 90px
+.about-info
+	max-width: 750px
+.about-text
+	@include paragraph-2
+.about-sign-up
+	color: $primary-color
+	font-size: 20px
+	font-weight: bold
+	padding-top: 20px
+.about-bottom
+	.about-title
+		max-width: 600px
+		margin-left: auto
+		margin-right: auto
+		text-align: center
+.about-list
+	@include list-type-none
+.about-list-item
+	max-width: 360px
+// Requirements
+.requirements-title
+	color: $white
+	text-align: center
+.requirements-text
+	color: $white
+.requirements-item:first-of-type
+	max-width: 550px
+.requirements-item:last-of-type
+	width: 500px
+.requirements-text
+	@include paragraph-2
 @import "media.sass"

@@ -1,5 +1,5 @@
 <template>
- <nav class="nav-menu">
+ <nav class="nav-menu" :class="{'active':fixedMenu}">
      <div class="container flex-container">
          <div class="logo">
              <a href="#"><img src="../assets/logo/logo.svg" alt="logo"></a>
@@ -41,7 +41,8 @@
                     name: '',
                     photo: '',
                     email: ''
-                }
+                },
+                fixedMenu: false
             }
         },
         created() {
@@ -58,6 +59,20 @@
                .catch(e => {
                    console.log(e)
                })
+        },
+        mounted(){
+             this.scrollCheck();
+          },
+        methods: {
+            scrollCheck: function(){
+                window.addEventListener('scroll',()=>{
+                    if(window.pageYOffset>1){
+                        this.fixedMenu = true;
+                    }else{
+                        this.fixedMenu = false;
+                    }
+                })
+            }
         }
     }
 </script>

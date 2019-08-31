@@ -1,9 +1,22 @@
 $primary-color: #ef6c00
+$primary-color-hover: #ff9933
+$primary-color-lighting: #ffffcc
+$disabled-color: #cccccc
 $secondary-color: #283593
 $white: #fff
 
 
 //mixins
+@mixin backgrounds($url,$color)
+  background: url($url) no-repeat $color
+  background-size: cover
+  background-position: center
+@mixin paragraph-2
+  font-size: 16px
+  line-height: 22px
+@mixin paragraph-3
+  font-size: 14px
+  line-height: 20px
 @mixin list-type-none
   list-style-type: none
 @mixin control-text
@@ -12,3 +25,6 @@ $white: #fff
 @mixin reset-button
   border: none
   outline: none
+@mixin section-margin
+  margin: 0 auto
+  padding: 145px 0
