@@ -3,166 +3,345 @@
 @import libs
 // Critical css
 ::placeholder
-	color: #666
-
+  color: #666
 ::selection
-	color: #fff
-
+  color: #fff
 input, textarea
-	outline: none
-	&:focus:required:invalid
-		border-color: red
-	&:required:valid
-		border-color: green
+  outline: none
+  &:focus
+    color: #000
+
 *
-	margin: 0
-	padding: 0
+  margin: 0
+  padding: 0
 a,button
-	cursor: pointer
+  cursor: pointer
 a
-	text-decoration: none
-	color: #000
+  text-decoration: none
+  color: #000
 a:hover
-	color: $primary-color
+  color: $primary-color
 body,#app
-	min-width: 320px
-	max-width: 2560px
-	position: relative
-	overflow-x: hidden
-	color: #000
-	background-color: $white
-	@include selectFont('Source Sans Pro',400,16px,1.65)
+  min-width: 320px
+  max-width: 2560px
+  position: relative
+  overflow-x: hidden
+  color: #000
+  background-color: $white
+  @include selectFont('Source Sans Pro',400,16px,1.65)
 // Headers text configs
 h1
-	@include selectFont('Overpass',600,50px,60px)
+  @include selectFont('Overpass',600,50px,60px)
 h2
-	@include selectFont('Overpass',600,42px,51px)
-	margin-bottom: 60px
+  @include selectFont('Overpass',600,42px,51px)
+  margin-bottom: 60px
 h3
-	@include selectFont('Overpass',600,26px,51px)
+  @include selectFont('Overpass',600,26px,51px)
 h4
-	@include selectFont('Overpass',600,22px,31px)
+  @include selectFont('Overpass',600,22px,31px)
 h5
-	@include selectFont('Source Sans Pro',400,18px,21px)
+  @include selectFont('Source Sans Pro',400,18px,21px)
 // Paragraph configs
 p
-	@include selectFont('Source Sans Pro',400,18px,26px)
-	margin-bottom: 30px
+  @include selectFont('Source Sans Pro',400,18px,26px)
+  margin-bottom: 30px
 img
-	max-width: 100%
+  max-width: 100%
 // margin sections
-.banner,.about,.requirements
-	@include section-margin
+.banner,.about,.requirements,.contact-block,.registration-block
+  @include section-margin
 // containers
 .container
-	max-width: 1170px
-	margin: 0 auto
+  max-width: 1170px
+  margin: 0 auto
 .flex-container
-	display: flex
-	justify-content: space-between
+  display: flex
+  justify-content: space-between
 // header
 .nav-menu
-	padding: 10px 0
-	height: 40px
-	width: 100%
-	background-color: $white
+  padding: 10px 0
+  height: 40px
+  width: 100%
+  background-color: $white
 .nav-menu.active
-	position: fixed
-	z-index: 1000
+  position: fixed
+  z-index: 1000
+  box-shadow: 0 0 2px 0 #b4b2b2
 .logo
-	width: 134px
-	img
-		height: 100%
+  width: 134px
+  img
+    height: 100%
 .menu
-	@include list-type-none
-	@include control-text
-	line-height: 40px
-	.menu-item
-	  margin: 0 10px
-	.active
-	  color: #0a0af7
+  @include list-type-none
+  @include control-text
+  line-height: 40px
+  .menu-item
+    margin: 0 10px
+  .active
+    color: #0a0af7
 .login-contact
-	margin-right: 10px
-	max-width: 136px
-	.login-name,.login-email
-	  display: block
-	  @include control-text
-	.login-name
-	  font-size: 14px
-	  text-align: right
-	.login-email
-	  font-size: 12px
-	  color: #999999
+  margin-right: 10px
+  max-width: 145px
+  .login-name,
+  .login-email
+    @include control-text
+    display: block
+  .login-name
+    font-size: 14px
+    text-align: right
+  .login-email
+    font-size: 12px
+    color: #999999
 .login-avatar
-	width: 40px
-	height: 40px
-	border-radius: 50%
-	overflow: hidden
+  width: 40px
+  height: 40px
+  border-radius: 50%
+  overflow: hidden
 .logout
-	display: block
-	width: 24px
-	height: 20px
-	background: url('./assets/icons/sign-out.svg') no-repeat #fff
-	background-size: cover
-	margin: 10px 0 0 15px
+  display: block
+  width: 24px
+  height: 20px
+  background: url('./assets/icons/sign-out.svg') no-repeat #fff
+  background-size: cover
+  margin: 10px 0 0 15px
 // Banner
 .banner
-	width: 100%
-	padding-top: 1px
+  width: 100%
+  padding-top: 1px
 .banner-title
-	margin: 140px 0 35px 0
-	color: $white
-	max-width: 455px
-	font-size: 50px
-	@include  control-text
+  margin: 140px 0 35px 0
+  color: $white
+  max-width: 455px
+  font-size: 50px
+  @include  control-text
 .banner-text
-	color: $white
-	max-width: 540px
-	margin-bottom: 35px
+  color: $white
+  max-width: 540px
+  margin-bottom: 35px
 .banner-sign-up
-	display: block
-	width: 293px
-	padding: 11px 0
-	background-color: $primary-color
-	text-align: center
-	font-size: 20px
-	color: #fff
-	border-radius: 5px
-	font-weight: bold
+  @include button($primary-color,$white)
+.banner-sign-up:hover
+  background-color: $primary-color-hover
+  color: $white
 // About
 .about-top
-	margin-bottom: 80px
+  margin-bottom: 80px
 .about-img
-	margin-top: 90px
+  margin-top: 90px
 .about-info
-	max-width: 750px
+  max-width: 750px
 .about-text
-	@include paragraph-2
+  @include paragraph-2
 .about-sign-up
-	color: $primary-color
-	font-size: 20px
-	font-weight: bold
-	padding-top: 20px
+  color: $primary-color
+  font-size: 20px
+  font-weight: bold
+  padding-top: 20px
 .about-bottom
-	.about-title
-		max-width: 600px
-		margin-left: auto
-		margin-right: auto
-		text-align: center
+  .about-title
+    max-width: 600px
+    margin-left: auto
+    margin-right: auto
+    text-align: center
 .about-list
-	@include list-type-none
+  @include list-type-none
 .about-list-item
-	max-width: 360px
+  max-width: 360px
 // Requirements
 .requirements-title
-	color: $white
-	text-align: center
+  color: $white
+  text-align: center
 .requirements-text
-	color: $white
+  color: $white
 .requirements-item:first-of-type
-	max-width: 550px
+  max-width: 550px
 .requirements-item:last-of-type
-	width: 500px
+  width: 500px
 .requirements-text
-	@include paragraph-2
+  @include paragraph-2
+//  Contact-block
+.contact-title
+  text-align: center
+  margin-bottom: 20px
+.contact-subtitle
+  text-align: center
+  margin-bottom: 60px
+.users-list
+  @include list-type-none
+  flex-wrap: wrap
+  justify-content: flex-start
+.users-item
+  width: 33%
+  margin-bottom: 50px
+  justify-content: flex-start
+.users-img
+  width: 80px
+  height: 80px
+  border-radius: 50%
+  overflow: hidden
+  margin-right: 10px
+  img
+    width: 100%
+    height: 100%
+.users-info
+  max-width: 260px
+.users-info-item
+  display: block
+  font-size: 14px
+  color: #666666
+.users-info-item
+  a
+    color: #666666
+.users-name
+  margin-top: 20px
+.users-name,.users-info-item
+  @include control-text
+.registration-date
+  display: none
+.show-more
+  @include button($white,$primary-color)
+  @include reset-button
+  border: 1px solid $primary-color
+  margin: 0 auto
+.show-more:hover
+  background-color: $primary-color-lighting
+// Registration
+.registration-block
+  padding-top: 0
+.registration-title
+  text-align: center
+  margin-bottom: 20px
+.registration-subtitle
+  text-align: center
+  margin-bottom: 60px
+.registration-form
+  flex-wrap: wrap
+.registration-item
+  width: 30%
+  margin: 0 30px 30px 0
+  position: relative
+.registration-input
+  width: -webkit-fill-available
+  border: 1px solid $disabled-color
+  color: $disabled-color
+  padding-left: 15px
+  height: 55px
+  line-height: 55px
+  border-radius: 5px
+.registration-input::placeholder
+  color: $disabled-color
+.registration-item::after
+  content: ""
+  position: absolute
+  top: -10px
+  left: 15px
+  display: block
+  background-color: $white
+  padding: 0 5px
+  z-index: 1
+  font-size: 12px
+  color: $disabled-color
+.registration-text::after
+  content: "Name"
+.registration-email::after
+  content: "Email"
+.registration-tel::after
+  content: "Phone"
+.registration-item.not-validate::after
+  color: red
+.registration-input.not-validate,.registration-upload.not-validate,.registration-item-bottom--select-position.not-validate
+  border: 1px solid red
+.registration-item-bottom
+  width: 48%
+.registration-item-bottom--select-position
+  width: -webkit-fill-available
+  border: 1px solid $disabled-color
+  color: #000
+  height: 55px
+  overflow: hidden
+  line-height: 55px
+  border-radius: 5px
+  .selected-position
+    padding: 0 15px
+    align-items: center
+    height: 100%
+  .select-btn
+    display: block
+    width: 20px
+    height: 20px
+    background: url('./assets/icons/caret-down.svg') no-repeat
+    background-position: center
+    cursor: pointer
+    transition: all 0.9s ease
+  .select-btn.active
+    transform: rotate(180deg)
+  .select-wrap
+    width: 100%
+  .select-items
+    padding-left: 15px
+    cursor: pointer
+  .select-items:hover
+    background-color: $primary-color-lighting
+.registration-item-bottom--select-position.active
+    height: auto
+.selected-text,.select-items
+  max-width: 563px
+  @include  control-text
+.registration-upload
+  width: -webkit-fill-available
+  border: 1px solid $disabled-color
+  color: #000
+  height: 55px
+  line-height: 55px
+  border-radius: 5px
+#file
+  z-index: -1
+  height: 0.1px
+  width: 0.1px
+  opacity: 0
+  overflow: hidden
+  position: absolute
+#file + label
+  @include button($white,$primary-color)
+  height: 100%
+  width: 130px
+  line-height: 55px
+  border: 1px solid $primary-color
+  z-index: 1
+  margin-top: -1px
+  font-weight: bold
+  cursor: pointer
+#file:focus + label, #file + label:hover
+  background-color: $primary-color-lighting
+.file-upload
+  max-width: 60%
+  display: block
+  height: 100%
+  padding-left: 15px
+  color: #cccccc
+.error-validation
+  color: red
+  font-size: 12px
+  padding-left: 15px
+  display: none
+.error-validation.active
+  display: inline
+.info-for-file
+  font-size: 12px
+  color: #cccccc
+  padding-left: 15px
+.registration-submit
+  @include button($primary-color,$white)
+  @include reset-button
+  margin: 45px auto 0 auto
+.registration-submit:hover
+  background-color: $primary-color-hover
+.registration-submit.disabled
+  background-color: $disabled-color
+  color: #999999
+.successfull-registration
+  text-align: center
+  margin: 20px 0
+  color: #06c806
+@import "animation.sass"
 @import "media.sass"

@@ -4,6 +4,8 @@
      <banner></banner>
      <about></about>
      <requirements></requirements>
+     <users></users>
+     <registration></registration>
   </div>
 </template>
 <style lang="sass">
@@ -14,6 +16,8 @@ import Header from './components/Header';
 import Banner from './components/Banner';
 import About from './components/About';
 import Requirements from "./components/Requirements";
+import Users from "./components/Users";
+import Registration from "./components/Registration";
 export default{
   name: 'app',
   data(){
@@ -25,7 +29,10 @@ export default{
     'header-template':Header,
     'banner': Banner,
     'about': About,
-    'requirements': Requirements
+    'requirements': Requirements,
+    'users': Users,
+    'registration': Registration
   }
 }
+
 </script>

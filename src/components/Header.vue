@@ -56,8 +56,8 @@
                    this.currentUser.email = response.data.user.email;
                    this.currentUser.photo = response.data.user.photo;
                })
-               .catch(e => {
-                   console.log(e)
+               .catch(error => {
+                   console.log(error);
                })
         },
         mounted(){

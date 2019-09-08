@@ -4,7 +4,7 @@ $primary-color-lighting: #ffffcc
 $disabled-color: #cccccc
 $secondary-color: #283593
 $white: #fff
-
+$grey: #666666
 
 //mixins
 @mixin backgrounds($url,$color)
@@ -28,3 +28,15 @@ $white: #fff
 @mixin section-margin
   margin: 0 auto
   padding: 145px 0
+@mixin button($bgcolor,$color)
+  display: block
+  width: 293px
+  height: 40px
+  line-height: 40px
+  background-color: $bgcolor
+  text-align: center
+  font-size: 20px
+  color: $color
+  border-radius: 5px
+  font-weight: bold
+  cursor: pointer
