@@ -6,6 +6,7 @@
      <requirements></requirements>
      <users></users>
      <registration></registration>
+     <footer-template></footer-template>
   </div>
 </template>
 <style lang="sass">
@@ -18,6 +19,7 @@ import About from './components/About';
 import Requirements from "./components/Requirements";
 import Users from "./components/Users";
 import Registration from "./components/Registration";
+import Footer from "./components/Footer";
 export default{
   name: 'app',
   data(){
@@ -25,13 +27,27 @@ export default{
 
     }
   },
+  mounted(){
+      const anchors = document.querySelectorAll('a[href*="#"]')
+      for (let anchor of anchors) {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              const blockID = anchor.getAttribute('href').substr(1);
+              document.getElementById(blockID).scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+              })
+          })
+      }
+  },
   components:{
     'header-template':Header,
     'banner': Banner,
     'about': About,
     'requirements': Requirements,
     'users': Users,
-    'registration': Registration
+    'registration': Registration,
+    'footer-template': Footer
   }
 }
 
