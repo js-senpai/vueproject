@@ -4,6 +4,9 @@
     @include backgrounds('./assets/imgs/banner-bg/banner-bg-2560x676.jpg',#283593)
   .requirements
     @include backgrounds('./assets/imgs/third-block-bg/third-block-bg-2560x692.jpg',#283593)
+  .nav-menu
+    .logo
+      margin-top: 6px
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1024px)
   .logo
@@ -17,7 +20,10 @@
 
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 856px)
+@media only screen and (max-width : 1005px)
+   .nav-menu
+    .logo
+      margin-top: 0px
    .container
      padding-right: 24px
      padding-left: 24px
@@ -75,12 +81,12 @@
        opacity: 0
      .icon-bar:first-of-type
        transform: rotate(45deg)
-       margin-top: 4px
+       margin-top: 5px
      .icon-bar:last-of-type
        transform: rotate(-45deg)
        margin-top: -17px
    .toggle-menu
-     display: none
+     display: grid
      width: 100%
      height: 100%
      position: fixed
@@ -88,6 +94,8 @@
      z-index: 1000
      grid-template-columns: 259px 100%
      justify-content: space-between
+     transition: all 2s ease
+     margin-left: -10000px
      .mobile-background
        background-color: #00000061
      .mobile-header
@@ -111,7 +119,7 @@
        a:hover
          color: $primary-color
    .toggle-menu.active
-     display: grid
+     margin-left: 0
 @media only screen and (max-width: 700px)
    .banner
      text-align: center
@@ -169,6 +177,7 @@
        margin-bottom: 20px
    .footer-menu
      flex-wrap: wrap
+     width: 100%
      .footer-menu-item
        width: 100%
        text-align: center
@@ -194,7 +203,7 @@
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
   h1
-    @include selectFont('Overpass',600,30px,36px)
+    @include selectFont('Overpass',600,30px,46px)
   h2
     @include selectFont('Overpass',600,26px,31px)
   h3

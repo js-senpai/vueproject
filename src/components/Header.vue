@@ -61,8 +61,8 @@
                     {url: '#Aboutme',pageName: 'About me'},
                     {url: '#Relationship',pageName: 'Relationships'},
                     {url: '#Requirements',pageName: 'Requirements'},
-                    {url: '#SignUp',pageName: 'Users'},
-                    {url: '#Users',pageName: 'Sign Up'}
+                    {url: '#Users',pageName: 'Users'},
+                    {url: '#SignUp',pageName: 'Sign Up'}
                 ],
                 currentUser: {
                     name: '',
